@@ -1,4 +1,4 @@
-import { colors } from '../constants/colors';
+import { colors } from '../constants';
 
 const theme = {
   fontFamily: 'Work Sans, sans-serif',
