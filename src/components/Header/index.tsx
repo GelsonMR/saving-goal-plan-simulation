@@ -4,7 +4,7 @@ import Logo from '../../icons/logo.svg';
 import { media } from '../../constants';
 
 const Container = styled.header`
-  position: absolute;
+  position: sticky;
   background-color: white;
   height: 56px;
   top: 0;
