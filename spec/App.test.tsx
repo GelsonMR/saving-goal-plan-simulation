@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { shallowWithTheme, mountWithTheme } from './helpers';
 import App from '../src/App';
 
 describe('App', () => {
   it('renders', () => {
-    const component = shallow(<App />);
+    const shallowComponent = shallowWithTheme(<App />);
+    const mountComponent = mountWithTheme(<App />);
 
-    expect(component.exists()).toEqual(true);
+    expect(shallowComponent.exists()).toEqual(true);
+    expect(mountComponent.exists()).toEqual(true);
   });
 });
