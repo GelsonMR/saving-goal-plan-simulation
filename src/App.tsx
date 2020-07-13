@@ -8,7 +8,7 @@ const App: React.FunctionComponent = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header logo="./icons/logo.svg" logoAlt="Origin" />
+      <Header />
       <SavingGoalScreen />
     </ThemeProvider>
   );

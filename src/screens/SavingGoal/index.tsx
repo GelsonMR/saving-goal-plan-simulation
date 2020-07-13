@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Card, InputField } from '../../components';
 import { media, colors } from '../../constants';
+import HouseIcon from '../../icons/house.svg';
 import GoalSummary from './components/GoalSummary';
 
 const Display = styled.p`
@@ -91,11 +92,7 @@ const SavingGoalScreen: React.FunctionComponent = () => {
         {"Let's plan your "}
         <strong>saving goal.</strong>
       </Display>
-      <Card
-        title="Buy a house"
-        subtitle="Saving goal"
-        icon="../../icons/house.svg"
-      >
+      <Card title="Buy a house" subtitle="Saving goal" icon={HouseIcon}>
         <Fields>
           <TotalAmountInput
             label="Total amount"

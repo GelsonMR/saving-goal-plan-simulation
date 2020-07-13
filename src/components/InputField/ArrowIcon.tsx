@@ -1,11 +1,12 @@
 import * as React from 'react';
+import Icon from '../../icons/arrow.svg';
 
 interface Props {
   className?: string;
 }
 
-const Icon: React.FunctionComponent<Props> = ({ className }) => (
-  <img src="../../icons/arrow.svg" alt="<" className={className} />
+const ArrowIcon: React.FunctionComponent<Props> = ({ className }) => (
+  <img src={Icon} alt="<" className={className} />
 );
 
-export default Icon;
+export default ArrowIcon;
