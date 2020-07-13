@@ -7,12 +7,16 @@ import Symbol from './Symbol';
 
 interface Props {
   className?: string;
-  autoFocus?: boolean;
   label?: string;
   symbol?: React.ReactChild;
   type?: string;
   value?: string;
+  mask?: string;
   min?: string;
+  max?: string;
+  onChange?: Function;
+  onInput?: Function;
+  autoFocus?: boolean;
 }
 
 const InputField: React.FunctionComponent<Props> = ({
@@ -21,9 +25,14 @@ const InputField: React.FunctionComponent<Props> = ({
   symbol,
   type,
   value,
+  mask,
   min,
+  max,
+  onChange,
+  onInput,
   autoFocus
-}) => {
+}: Props) => {
+  const [inputValue, setValue] = React.useState(value);
   return (
     <div className={className}>
       <Label>{label}</Label>
@@ -32,7 +41,47 @@ const InputField: React.FunctionComponent<Props> = ({
         {type === 'monthPicker' ? (
           <MonthPicker min={min} value={value} />
         ) : (
-          <Input autoFocus={autoFocus} type={type} />
+          <Input
+            autoFocus={autoFocus}
+            type={type}
+            value={inputValue}
+            max={max}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              onChange && onChange(event)
+            }
+            onInput={(event: React.ChangeEvent<HTMLInputElement>) => {
+              if (mask === 'currency') {
+                const maxValue = parseInt(max);
+                const notNumber = /[^0-9]/g;
+                const everyThreeDigits = /(\d)(?=(\d{3})+(?!\d))/g;
+                const currentValue = event.target.value;
+
+                if (!currentValue) {
+                  setValue('');
+                } else {
+                  const intValue = parseInt(
+                    currentValue.toString().replace(notNumber, '')
+                  );
+                  if (
+                    !(
+                      maxValue &&
+                      typeof intValue === 'number' &&
+                      intValue > maxValue
+                    )
+                  ) {
+                    const formattedValue = intValue
+                      .toString()
+                      .replace(everyThreeDigits, '$1,');
+                    setValue(formattedValue);
+                    event.target.value = intValue.toString();
+                  } else {
+                    event.target.value = inputValue.replace(notNumber, '');
+                  }
+                }
+              }
+              onInput && onInput(event);
+            }}
+          />
         )}
       </InputWrapper>
     </div>
