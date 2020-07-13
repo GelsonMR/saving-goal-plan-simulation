@@ -13,7 +13,7 @@ const Container = styled.header`
       padding: 39px 40px 49px;
       border-radius: 8px;
       box-shadow: 0px 1px 4px rgba(150, 164, 176, 0.1);
-      border: 1px solid ${colors.lightGray};
+      border: 1px solid ${colors.gray};
       width: 560px;
     }
   }
