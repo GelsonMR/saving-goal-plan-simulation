@@ -15,6 +15,7 @@ const Container = styled.header`
       box-shadow: 0px 1px 4px rgba(150, 164, 176, 0.1);
       border: 1px solid ${colors.gray};
       width: 560px;
+      margin: 0 auto 32px;
     }
   }
 `;
