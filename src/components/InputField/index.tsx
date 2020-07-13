@@ -39,7 +39,7 @@ const InputField: React.FunctionComponent<Props> = ({
       <InputWrapper>
         {symbol && <Symbol>{symbol}</Symbol>}
         {type === 'monthPicker' ? (
-          <MonthPicker min={min} value={value} />
+          <MonthPicker min={min} value={value} onChange={onChange} />
         ) : (
           <Input
             autoFocus={autoFocus}

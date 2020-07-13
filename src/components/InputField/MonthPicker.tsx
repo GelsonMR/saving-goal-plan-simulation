@@ -55,11 +55,13 @@ const Year = styled.span`
 interface Props {
   min?: string;
   value?: string;
+  onChange?: Function;
 }
 
 const MonthPicker: React.FunctionComponent<Props> = ({
   value = new Date().toJSON(),
-  min
+  min,
+  onChange
 }) => {
   const selectedDate = new Date(value);
   const selectedMonth = selectedDate.getMonth();
@@ -69,16 +71,25 @@ const MonthPicker: React.FunctionComponent<Props> = ({
     minDate &&
     selectedMonth <= minDate.getMonth() &&
     selectedYear <= minDate.getFullYear();
+
+  const [month, setMonth] = React.useState(value);
+  const changeMonth = (quantity: number) => {
+    const date = new Date(month);
+    date.setMonth(date.getMonth() + quantity);
+    const parsedDate = date.toJSON();
+    setMonth(parsedDate);
+    onChange(parsedDate);
+  };
   return (
     <>
-      <Button disabled={disablePrev}>
+      <Button disabled={disablePrev} onClick={() => changeMonth(-1)}>
         <ArrowIcon />
       </Button>
       <Value>
         <span>{months[selectedMonth]}</span>
         <Year>{selectedYear}</Year>
       </Value>
-      <Button>
+      <Button onClick={() => changeMonth(1)}>
         <ArrowIconRight />
       </Button>
     </>
