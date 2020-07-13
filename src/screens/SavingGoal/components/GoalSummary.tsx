@@ -48,7 +48,7 @@ const Value = styled.span`
 `;
 
 const Summary = styled.div`
-  height: 70px;
+  background-color: ${colors.lighterGray};
   padding: 0 24px;
   font-weight: normal;
   font-size: 12px;
@@ -56,20 +56,25 @@ const Summary = styled.div`
   padding: 16px 24px 22px;
 
   ${media.tablet} {
-    height: 102px;
     padding: 16px 32px;
   }
 `;
 
 interface Props {
-  months: number;
   amount: number;
   date: string;
 }
 
-const Card: React.FunctionComponent<Props> = ({ months, amount, date }) => {
-  const perMonth = Math.ceil(amount / months);
+const Card: React.FunctionComponent<Props> = ({ amount, date }) => {
+  const today = new Date();
   const dateGoal = date && new Date(date);
+  const months =
+    (dateGoal.getFullYear() - today.getFullYear()) * 12 -
+    today.getMonth() +
+    dateGoal.getMonth() +
+    1;
+
+  const perMonth = Math.ceil(amount / months);
   const selectedMonth = dateGoal && dateGoal.getMonth();
   const month = monthsList[selectedMonth];
   const year = dateGoal && dateGoal.getFullYear();
@@ -87,7 +92,10 @@ const Card: React.FunctionComponent<Props> = ({ months, amount, date }) => {
       </MonthlyInfo>
       <Summary>
         <span>
-          You’re planning <strong>{`${months} monthly deposits `}</strong>
+          You’re planning
+          <strong>
+            {` ${months} monthly deposit${months > 1 ? 's' : ''} `}
+          </strong>
           to reach your <strong>{`$${formattedAmount} `}</strong>
           goal by <strong>{`${month} ${year}.`}</strong>
         </span>
