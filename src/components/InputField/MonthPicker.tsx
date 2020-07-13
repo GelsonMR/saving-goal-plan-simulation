@@ -3,6 +3,12 @@ import styled from 'styled-components';
 import ArrowIcon from './ArrowIcon';
 import { colors, months } from '../../constants';
 
+const Wrapper = styled.div`
+  flex: 1;
+  display: flex;
+  height: 100%;
+`;
+
 const Button = styled.button`
   flex: none;
   display: flex;
@@ -79,8 +85,18 @@ const MonthPicker: React.FunctionComponent<Props> = ({
     setMonth(parsedDate);
     onChange(parsedDate);
   };
+
+  const onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.keyCode === 37 && !disablePrev) {
+      changeMonth(-1);
+    }
+    if (event.keyCode === 39) {
+      changeMonth(1);
+    }
+  };
+
   return (
-    <>
+    <Wrapper tabIndex={0} onKeyDown={onKeyDown}>
       <Button disabled={disablePrev} onClick={() => changeMonth(-1)}>
         <ArrowIcon />
       </Button>
@@ -91,7 +107,7 @@ const MonthPicker: React.FunctionComponent<Props> = ({
       <Button onClick={() => changeMonth(1)}>
         <ArrowIconRight />
       </Button>
-    </>
+    </Wrapper>
   );
 };
 
