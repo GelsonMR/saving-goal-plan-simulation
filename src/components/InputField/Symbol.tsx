@@ -11,7 +11,7 @@ const Symbol = styled.div`
   width: 55px;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid ${colors.lightGray};
+  border-right: 1px solid ${colors.gray};
   background-color: ${colors.lighterGray};
   color: ${colors.prettyGray};
 `;

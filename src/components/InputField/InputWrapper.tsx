@@ -6,8 +6,9 @@ const InputWrapper = styled.div`
   border-radius: 4px;
   background-color: white;
   height: 56px;
-  border: 1px solid ${colors.lightGray};
+  border: 1px solid ${colors.gray};
   align-items: stretch;
+  overflow: hidden;
 `;
 
 export default InputWrapper;
