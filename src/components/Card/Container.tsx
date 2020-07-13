@@ -4,7 +4,7 @@ import { colors, media } from '../../constants';
 const Container = styled.header`
   background-color: white;
   padding: 28px 24px;
-  border-radius: 16px;
+  border-radius: 16px 16px 0 0;
   box-shadow: 0 2px 16px rgba(225, 232, 237, 0.8);
   margin: 0 auto;
 
