@@ -13,20 +13,20 @@ When the users change the value of any of the inputs, the monthly deposit value 
 
 # Tasks
 
-- [ ] Develop the page as close as possible to the mockups, both on mobile & desktop.
-- [ ] Implement business rules.
-- [ ] Test the codebase.
+1. Develop the page as close as possible to the mockups, both on mobile & desktop.
+2. Implement business rules.
+3. Test the codebase.
 
 #### Money input
 
-- [ ] Allow only numbers
-- [ ] Display the value formatted as money (e.g 3500.45 should be 3,500.44)
+- [X] Allow only numbers
+- [X] Display the value formatted as money (e.g 3500.45 should be 3,500.44)
 
 #### Date input
 
-- [ ] Allow only future dates
-- [ ] When clicking on the arrow buttons it should go up and down month by month
-- [ ] The users should be able to move the months by typing the Left and Right arrow key on the keyboard
+- [X] Allow only future dates
+- [X] When clicking on the arrow buttons it should go up and down month by month
+- [X] The users should be able to move the months by typing the Left and Right arrow key on the keyboard
 
 # Usage
 
