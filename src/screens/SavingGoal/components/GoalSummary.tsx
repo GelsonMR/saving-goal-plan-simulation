@@ -73,17 +73,22 @@ const Card: React.FunctionComponent<Props> = ({ months, amount, date }) => {
   const selectedMonth = dateGoal && dateGoal.getMonth();
   const month = monthsList[selectedMonth];
   const year = dateGoal && dateGoal.getFullYear();
+  const everyThreeDigits = /(\d)(?=(\d{3})+(?!\d))/g;
+  const formattedPerMonth = perMonth
+    .toString()
+    .replace(everyThreeDigits, '$1,');
+  const formattedAmount = amount.toString().replace(everyThreeDigits, '$1,');
 
   return (
     <Container>
       <MonthlyInfo>
         <Label>Monthly amount</Label>
-        <Value>${perMonth}</Value>
+        <Value>${formattedPerMonth}</Value>
       </MonthlyInfo>
       <Summary>
         <span>
           You’re planning <strong>{`${months} monthly deposits `}</strong>
-          to reach your <strong>{`$${amount} `}</strong>
+          to reach your <strong>{`$${formattedAmount} `}</strong>
           goal by <strong>{`${month} ${year}.`}</strong>
         </span>
       </Summary>
