@@ -58,6 +58,7 @@ const InputField: React.FunctionComponent<Props> = ({
 
                 if (!currentValue) {
                   setValue('');
+                  event.target.value = '';
                 } else {
                   const intValue = parseInt(
                     currentValue.toString().replace(notNumber, '')
@@ -72,8 +73,13 @@ const InputField: React.FunctionComponent<Props> = ({
                     const formattedValue = intValue
                       .toString()
                       .replace(everyThreeDigits, '$1,');
-                    setValue(formattedValue);
-                    event.target.value = intValue.toString();
+                    if (isNaN(intValue)) {
+                      setValue('');
+                      event.target.value = '';
+                    } else {
+                      setValue(formattedValue);
+                      event.target.value = intValue.toString();
+                    }
                   } else {
                     event.target.value = inputValue.replace(notNumber, '');
                   }
