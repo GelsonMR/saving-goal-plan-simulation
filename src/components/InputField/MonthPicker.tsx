@@ -40,7 +40,6 @@ const Value = styled.div`
   font-weight: 600;
   font-family: ${({ theme }) => theme.fontFamily};
   font-size: 20px;
-  padding-left: 16px;
   height: 100%;
   align-items: center;
   justify-content: center;
