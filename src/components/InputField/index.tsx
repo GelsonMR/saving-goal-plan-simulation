@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Label from './Label';
 import InputWrapper from './InputWrapper';
+import MonthPicker from './MonthPicker';
 import Input from './Input';
 import Symbol from './Symbol';
 
@@ -10,15 +11,29 @@ interface Props {
   label?: string;
   symbol?: React.ReactChild;
   type?: string;
+  value?: string;
+  min?: string;
 }
 
-const InputField: React.FunctionComponent<Props> = props => {
+const InputField: React.FunctionComponent<Props> = ({
+  className,
+  label,
+  symbol,
+  type,
+  value,
+  min,
+  autoFocus
+}) => {
   return (
-    <div className={props.className}>
-      <Label>{props.label}</Label>
+    <div className={className}>
+      <Label>{label}</Label>
       <InputWrapper>
-        {props.symbol && <Symbol>{props.symbol}</Symbol>}
-        <Input autoFocus={props.autoFocus} type={props.type} />
+        {symbol && <Symbol>{symbol}</Symbol>}
+        {type === 'monthPicker' ? (
+          <MonthPicker min={min} value={value} />
+        ) : (
+          <Input autoFocus={autoFocus} type={type} />
+        )}
       </InputWrapper>
     </div>
   );
