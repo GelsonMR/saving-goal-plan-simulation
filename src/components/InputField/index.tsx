@@ -24,10 +24,10 @@ const InputField: React.FunctionComponent<Props> = ({
   label,
   symbol,
   type,
-  value,
+  value = '',
   mask,
   min,
-  max,
+  max = '',
   onChange,
   onInput,
   autoFocus

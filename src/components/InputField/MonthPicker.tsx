@@ -83,7 +83,7 @@ const MonthPicker: React.FunctionComponent<Props> = ({
     date.setMonth(date.getMonth() + quantity);
     const parsedDate = date.toJSON();
     setMonth(parsedDate);
-    onChange(parsedDate);
+    onChange && onChange(parsedDate);
   };
 
   const onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {

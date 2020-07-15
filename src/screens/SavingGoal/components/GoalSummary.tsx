@@ -67,7 +67,7 @@ interface Props {
 
 const Card: React.FunctionComponent<Props> = ({ amount, date }) => {
   const today = new Date();
-  const dateGoal = date && new Date(date);
+  const dateGoal = new Date(date);
   const months =
     (dateGoal.getFullYear() - today.getFullYear()) * 12 -
     today.getMonth() +
