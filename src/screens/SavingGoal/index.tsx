@@ -39,7 +39,9 @@ const TotalAmountInput = styled(InputField)`
   margin-bottom: 16px;
 `;
 
-const GoalMonth = styled(InputField)`
+TotalAmountInput.displayName = 'TotalAmountInput';
+
+const GoalMonthInput = styled(InputField)`
   flex: 0 1 50%;
   margin-bottom: 16px;
 
@@ -85,6 +87,7 @@ const ConfirmButton = styled.button`
 const SavingGoalScreen: React.FunctionComponent = () => {
   const [totalAmount, setTotalAmount] = React.useState('0');
   const [monthGoal, setMonthGoal] = React.useState(new Date().toJSON());
+  const handleAmountInput = ({ target: { value } }) => setTotalAmount(value);
 
   return (
     <>
@@ -101,19 +104,15 @@ const SavingGoalScreen: React.FunctionComponent = () => {
             mask="currency"
             max="9999999999"
             value={totalAmount}
-            onInput={(event: React.ChangeEvent<HTMLInputElement>) => {
-              setTotalAmount(event.target.value);
-            }}
+            onInput={handleAmountInput}
             autoFocus
           />
-          <GoalMonth
+          <GoalMonthInput
             label="Reach goal by"
             type="monthPicker"
             min={new Date().toJSON()}
             value={monthGoal}
-            onChange={(value: string) => {
-              setMonthGoal(value);
-            }}
+            onChange={setMonthGoal}
           />
         </Fields>
         <GoalSummary amount={parseInt(totalAmount) || 0} date={monthGoal} />
