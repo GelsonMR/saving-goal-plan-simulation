@@ -11,11 +11,14 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
-            - run: npm deploy
+            - run: |
+                git config --global user.email $GH_EMAIL
+                git config --global user.name $GH_NAME
+                npm run deploy
 workflows:
     build-test-deploy:
       jobs:
-        - build-test-deploy
-          filters:
-            branches:
-              ignore: gh-pages
+        - build-test-deploy:
+            filters:
+              branches:
+                ignore: gh-pages
