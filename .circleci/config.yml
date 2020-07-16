@@ -13,10 +13,9 @@ jobs:
             - run: npm test
             - run: npm deploy
 workflows:
-  build-test-deploy:
-    jobs:
-      - build-test-deploy
+    build-test-deploy:
+      jobs:
+        - build-test-deploy
           filters:
             branches:
-              ignore:
-                gh-pages
+              ignore: gh-pages
