@@ -10,4 +10,6 @@ const Input = styled.input`
   width: 100%;
 `;
 
+Input.displayName = 'Input';
+
 export default Input;
