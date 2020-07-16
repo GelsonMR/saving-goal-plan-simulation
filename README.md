@@ -11,6 +11,8 @@ In it, the users choose (i) the value they want to save and (ii) the date they p
 
 When the users change the value of any of the inputs, the monthly deposit value is calculated and displayed to them.
 
+[Click here to check out the demo.](https://gelsonmr.github.io/saving-goal-plan-simulation/)
+
 # Tasks
 
 1. Develop the page as close as possible to the mockups, both on mobile & desktop.
