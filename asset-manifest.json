@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/saving-goal-plan-simulation/static/css/main.6b142cf3.chunk.css",
+    "main.js": "/saving-goal-plan-simulation/static/js/main.4dd043c4.chunk.js",
+    "main.js.map": "/saving-goal-plan-simulation/static/js/main.4dd043c4.chunk.js.map",
+    "runtime-main.js": "/saving-goal-plan-simulation/static/js/runtime-main.30b6cdfa.js",
+    "runtime-main.js.map": "/saving-goal-plan-simulation/static/js/runtime-main.30b6cdfa.js.map",
+    "static/js/2.8bf02735.chunk.js": "/saving-goal-plan-simulation/static/js/2.8bf02735.chunk.js",
+    "static/js/2.8bf02735.chunk.js.map": "/saving-goal-plan-simulation/static/js/2.8bf02735.chunk.js.map",
+    "index.html": "/saving-goal-plan-simulation/index.html",
+    "precache-manifest.71386851879dd0e26bac6fc369ea0f73.js": "/saving-goal-plan-simulation/precache-manifest.71386851879dd0e26bac6fc369ea0f73.js",
+    "service-worker.js": "/saving-goal-plan-simulation/service-worker.js",
+    "static/css/main.6b142cf3.chunk.css.map": "/saving-goal-plan-simulation/static/css/main.6b142cf3.chunk.css.map",
+    "static/js/2.8bf02735.chunk.js.LICENSE.txt": "/saving-goal-plan-simulation/static/js/2.8bf02735.chunk.js.LICENSE.txt",
+    "static/media/arrow.svg": "/saving-goal-plan-simulation/static/media/arrow.6a23a8a6.svg",
+    "static/media/house.svg": "/saving-goal-plan-simulation/static/media/house.889409ea.svg",
+    "static/media/logo.svg": "/saving-goal-plan-simulation/static/media/logo.c84bf198.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.30b6cdfa.js",
+    "static/js/2.8bf02735.chunk.js",
+    "static/css/main.6b142cf3.chunk.css",
+    "static/js/main.4dd043c4.chunk.js"
+  ]
+}
