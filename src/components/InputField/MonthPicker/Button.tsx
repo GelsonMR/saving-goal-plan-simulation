@@ -17,13 +17,13 @@ const Button = styled.button`
   }
 
   &:not([disabled]):hover {
-    border-color: ${colors.lightGray};
-    background-color: ${colors.lightGray};
+    border-color: ${colors.blueishGray};
+    background-color: ${colors.blueishGray};
   }
 
   &:not([disabled]):active {
-    border-color: ${colors.lighterGray};
-    background-color: ${colors.lighterGray};
+    border-color: ${colors.gray};
+    background-color: ${colors.gray};
   }
 `;
 

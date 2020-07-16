@@ -48,7 +48,7 @@ const Value = styled.span`
 `;
 
 const Summary = styled.div`
-  background-color: ${colors.lighterGray};
+  background-color: ${colors.blueishGray};
   padding: 0 24px;
   font-weight: normal;
   font-size: 12px;

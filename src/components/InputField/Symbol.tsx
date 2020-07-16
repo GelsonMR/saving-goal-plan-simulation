@@ -12,7 +12,7 @@ const Symbol = styled.div`
   align-items: center;
   justify-content: center;
   border-right: 1px solid ${colors.gray};
-  background-color: ${colors.lighterGray};
+  background-color: ${colors.blueishGray};
   color: ${colors.prettyGray};
 `;
 
